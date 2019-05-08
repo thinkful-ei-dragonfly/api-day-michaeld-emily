@@ -19,24 +19,20 @@ const api = (function() {
         }
         return data;
       });
-      
   }
   function createItem(name){
-    const newItem = JSON.stringify(
-      {name,
-      });
+    const newItem = JSON.stringify( {name} );
+  
+    return fetch(BASE_URL + '/items', {
+      method: 'POST',
+      headers: new Headers({'Content-Type' : 'application/json'}),
+      body: newItem,
+    });
   }
-  // return fetch(BASE_URL + '/items')
-  //   method: 'POST',
-  //   headers: new Headers:({'content-type': 'application/json'})
-  //   body: newItem,
-
-
+  
   return {
     getItems,
-    createItem
+    createItem,
   };
 
 }());
-
-
