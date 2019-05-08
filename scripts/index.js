@@ -1,4 +1,8 @@
+
 /* global shoppingList, store */
+
+/* global shoppingList, $, Item, api ,store */
+
 'use strict';
 
 $(document).ready(function() {
@@ -6,5 +10,16 @@ $(document).ready(function() {
   shoppingList.render();
 });
 
-store.items.push(Item.create('apples'));
+api.getItems()
+  .then(items => {
+    items.forEach( items => store.addItem(item));
+    shoppingList.render();
+  })
+  .catch(err => console.log(err));
+});
+  
+
+// api.createItem('bananas')
+//   .then(() => api.getItems())
+//   .then(items => console.log(items));
 
