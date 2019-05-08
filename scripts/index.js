@@ -10,13 +10,13 @@ $(document).ready(function() {
   shoppingList.render();
 });
 
-api.getItems()
+api.getItems() 
   .then(items => {
-    items.forEach( items => store.addItem(item));
+    items.forEach( items => store.addItem(items));
     shoppingList.render();
   })
   .catch(err => console.log(err));
-});
+
   
 
 // api.createItem('bananas')

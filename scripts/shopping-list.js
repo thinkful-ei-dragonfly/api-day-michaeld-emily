@@ -74,11 +74,10 @@ const shoppingList = (function(){
           render();
         });
 
-      store.addItem(newItemName);
-      render();
-    });
-  }
-  
+     
+      
+});
+
   function getItemIdFromElement(item) {
     return $(item)
       .closest('.js-item-element')

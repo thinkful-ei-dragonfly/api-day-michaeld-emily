@@ -5,7 +5,7 @@ const api = (function() {
 
   function getItems() {
     let error;
-    return fetch(BASE_URL + '/items'); //should go to catch if fail
+    return fetch(BASE_URL + '/items') //should go to catch if fail
       .then(res => {
         if (!res.ok){
           error = {code: res.status};
@@ -20,22 +20,23 @@ const api = (function() {
         return data;
       });
       
-}
+  }
   function createItem(name){
-    cosnt newItem = JSON.stringify(
+    const newItem = JSON.stringify(
       {name,
-  });
+      });
+  }
+  // return fetch(BASE_URL + '/items')
+  //   method: 'POST',
+  //   headers: new Headers:({'content-type': 'application/json'})
+  //   body: newItem,
 
-  return fetch(BASE_URL + '/items')
-    method: 'POST',
-    headers: new Headers:({'content-type': 'application/json'})
-    body: newItem,
 
-}
   return {
     getItems,
     createItem
   };
 
 }());
+
 
