@@ -1,4 +1,5 @@
 /* global shoppingList, store */
+'use strict';
 
 $(document).ready(function() {
   shoppingList.bindEventListeners();
@@ -6,3 +7,4 @@ $(document).ready(function() {
 });
 
 store.items.push(Item.create('apples'));
+
